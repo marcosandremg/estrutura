@@ -1,6 +1,6 @@
 """An implementation of a binary search tree"""
-from binarytree import BinaryTree
-from base import BaseSet
+from ods.binarytree import BinaryTree
+from ods.base import BaseSet
 
 class BinarySearchTree(BinaryTree,BaseSet):
     """Base classs for all our binary search trees"""

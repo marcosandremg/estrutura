@@ -1,6 +1,6 @@
 """A Set implementation that uses hashing with linaer probing"""
-from utils import new_array
-from base import BaseSet
+from ods.utils import new_array
+from ods.base import BaseSet
 
 w = 32
 

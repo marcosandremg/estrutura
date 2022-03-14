@@ -1,7 +1,7 @@
 """An implementation of B-Trees"""
 
-from utils import new_array, new_int_array
-from base import BaseSet
+from ods.utils import new_array, new_int_array
+from ods.base import BaseSet
 
 class BlockStore(object):
     """This class simulates a block storage device like a file"""

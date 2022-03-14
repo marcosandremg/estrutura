@@ -1,5 +1,5 @@
 """An implementation of a singly-linked list"""
-from base import BaseList
+from ods.base import BaseList
 
 class SLList(BaseList):
     

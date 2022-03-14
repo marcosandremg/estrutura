@@ -1,7 +1,7 @@
 
-from utils import new_array
-from base import BaseList
-from arraydeque import ArrayDeque
+from ods.utils import new_array
+from ods.base import BaseList
+from ods.arraydeque import ArrayDeque
 
 class SEList(BaseList):
     class BDeque(ArrayDeque):
