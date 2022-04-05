@@ -9,22 +9,24 @@ import random
 from ods.base import BaseSet
 from ods.binarytree import BinaryTree
 
+
 def random_bit():
     return random.getrandbits(1) == 0
+
 
 class MeldableHeap(BinaryTree, BaseSet):
     class Node(BinaryTree.Node):
         def __init__(self, x):
             super(MeldableHeap.Node, self).__init__()
             self.x = x
-            
+
     def __init__(self, iterable=[]):
         super(MeldableHeap, self).__init__()
         self.n = 0
-        
+
     def _new_node(self, x):
         return MeldableHeap.Node(x)
-    
+
     def find_min(self):
         if n == 0: raise IndexError('find_min on empty queue')
         return self.r.x
@@ -35,7 +37,7 @@ class MeldableHeap(BinaryTree, BaseSet):
         self.r.parent = self.nil
         self.n += 1
         return True
-    
+
     def remove(self):
         if self.n == 0: raise IndexError('remove from empty heap')
         x = self.r.x
@@ -43,7 +45,7 @@ class MeldableHeap(BinaryTree, BaseSet):
         if self.r != self.nil: self.r.parent = self.nil
         self.n -= 1
         return x
-    
+
     def merge(self, h1, h2):
         if h1 == self.nil: return h2
         if h2 == self.nil: return h1
@@ -55,10 +57,9 @@ class MeldableHeap(BinaryTree, BaseSet):
             h1.right = self.merge(h1.right, h2)
             h1.right.parent = h1
         return h1
-    
+
     def __iter__(self):
         u = self.first_node()
         while u != self.nil:
             yield u.x
             u = self.next_node(u)
-

@@ -60,7 +60,7 @@ class DLList(BaseList):
         return u
 
     def add(self, i, x):
-        if i < 0 or i > self.n:    raise IndexError()
+        if i < 0 or i > self.n: raise IndexError()
         self.add_before(self.get_node(i), x)
 
     def __iter__(self):
@@ -69,3 +69,29 @@ class DLList(BaseList):
             yield u.x
             u = u.next
 
+    def eh_palindromo(self):
+        i = 0
+        lenght = self.size() - 1
+        a = True
+        while i < (self.size() / 2):
+            a = self.get(i)
+            b = self.get(lenght - i)
+            if a != b:
+                i = self.size()
+                a = False
+            i += 1
+        if a: return "É Palindromo"
+        else: return "Não É Palindromo"
+
+    def rotate(self, r):
+        mod = self.size()
+        j = r % mod
+        a = self.get(j)
+        self.set(j, self.get(0))
+        i = 1
+        while i < self.size():
+            b = a
+            j = (j + r) % mod
+            a = self.get(j)
+            self.set(j, b)
+            i += 1

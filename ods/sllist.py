@@ -1,8 +1,8 @@
 """An implementation of a singly-linked list"""
 from ods.base import BaseList
 
+
 class SLList(BaseList):
-    
     class Node(object):
         def __init__(self, x):
             self.x = x
@@ -11,7 +11,7 @@ class SLList(BaseList):
     def __init__(self, iterable=[]):
         self._initialize()
         self.add_all(iterable)
-        
+
     def _initialize(self):
         self.n = 0
         self.head = None
@@ -20,7 +20,7 @@ class SLList(BaseList):
     def new_node(self, x):
         return SLList.Node(x)
 
-    def _add(self,x):
+    def _add(self, x):
         u = self.new_node(x)
         if self.n == 0:
             self.head = u
@@ -30,7 +30,7 @@ class SLList(BaseList):
         self.n += 1
         return True
 
-    def push(self,x):
+    def push(self, x):
         u = self.new_node(x)
         u.next = self.head
         self.head = u
@@ -54,40 +54,40 @@ class SLList(BaseList):
         for _ in range(i):
             u = u.next
         return u
-    
+
     def get(self, i):
-        if i < 0 or i > self.n-1: raise IndexError()
+        if i < 0 or i > self.n - 1: raise IndexError()
         return self.get_node(i).x
 
     def set(self, i, x):
-        if i < 0 or i > self.n-1: raise IndexError()
+        if i < 0 or i > self.n - 1: raise IndexError()
         u = self.get_node(i)
         y, u.x = u.x, x
         return y
-        
+
     def add(self, i, x):
         if i < 0 or i > self.n: raise IndexError()
         if i == 0: self.push(x); return True
         u = self.head
-        for _ in range(i-1):
+        for _ in range(i - 1):
             u = u.next
         w = self.new_node(x)
         w.next = u.next
         u.next = w
         self.n += 1
         return True
-    
+
     def remove(self, i):
-        if i < 0 or i > self.n-1: raise IndexError()
+        if i < 0 or i > self.n - 1: raise IndexError()
         if i == 0: return self.pop()
         u = self.head
-        for _ in range(i-1):
+        for _ in range(i - 1):
             u = u.next
         w = u.next
         u.next = u.next.next
         self.n -= 1
         return w.x
-        
+
     def pop(self):
         if self.n == 0: return None
         x = self.head.x
@@ -113,3 +113,21 @@ class SLList(BaseList):
     def __len__(self):
         return self.size()
 
+    def penultimate(self):
+        u = self.head
+        while u.next is not None:
+            penultimate = u.x
+            u = u.next
+        return penultimate
+
+    def reverse(self):
+        i = 0
+        lenght = self.size() - 1
+        while i < (self.size() / 2):
+            a = self.get(i)
+            b = self.get(lenght - i)
+            self.set(i, b)
+            self.set(lenght - i, a)
+            i += 1
+
+        return 'Reversed'
