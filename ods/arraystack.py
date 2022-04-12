@@ -59,9 +59,3 @@ class ArrayStack(BaseList):
         b[0:self.n] = self.a[0:self.n]
         self.a = b
 
-
-if __name__ == "__main__":
-    a = ArrayStack([1, 2, 3])
-    print(a.a)
-    a.add_all_2(1, [3,2,3,4])
-    print(a.a)
