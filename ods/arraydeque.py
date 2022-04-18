@@ -67,8 +67,10 @@ class ArrayDeque(BaseList):
 
     def remove_varios(self, start, stop):
         if (start or stop) < 0 or (start or stop) >= self.n: raise IndexError()
-        k = stop - start + 1
+        diff = stop - start
         if start < self.n / 2:
-            self.a[(self.j + k) % len(self.a)] = self.a[start % len(self.a)]
+        for k in range(i, 0, -1):
+                self.a[(self.j + k) % len(self.a)] = self.a[(self.j + k - 1) % len(self.a)]
+            self.j = (self.j + 1) % len(self.a)
         else:
-            self.a[(self.j + k) % len(self.a)] = self.a[(self.j + k + 1) % len(self.a)]
+            self.a[(self.j + k) % len(self.a)] = self.a[(start + 1) % len(self.a)]
