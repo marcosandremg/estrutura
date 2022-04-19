@@ -6,6 +6,12 @@ at a[(j+i)%len(a)].
 
 Uses a doubling strategy for resizing a when it becomes full or too empty.
 '''
+'''
+Declaro que a resolução desta atividade, que submeto para avaliação,é meu trabalho individual, realizado sem ajuda
+de qualquer outra pessoa, e constitui solução original criada por mim, sem auxílio de terceiros ou cópia de trabalhos
+já publicados.
+
+'''
 from ods.utils import new_array
 
 from ods.base import BaseList
@@ -65,12 +71,15 @@ class ArrayDeque(BaseList):
         self.a = b
         self.j = 0
 
-    def remove_varios(self, start, stop):
+    def remove_varios(self, start: int, stop: int):
         if (start or stop) < 0 or (start or stop) >= self.n: raise IndexError()
         diff = stop - start
         if start < self.n / 2:
-        for k in range(i, 0, -1):
-                self.a[(self.j + k) % len(self.a)] = self.a[(self.j + k - 1) % len(self.a)]
-            self.j = (self.j + 1) % len(self.a)
+            for k in range(start, -1, -1):
+                self.a[(self.j + k + diff) % len(self.a)] = self.a[(self.j + k - 1) % len(self.a)]
+            self.j = (self.j + diff + 1) % len(self.a)
         else:
-            self.a[(self.j + k) % len(self.a)] = self.a[(start + 1) % len(self.a)]
+            for k in range(stop, self.n - 1):
+                self.a[(self.j + k - diff) % len(self.a)] = self.a[(self.j + k + 1) % len(self.a)]
+        self.n -= (diff + 1)
+        if len(self.a) >= 3 * self.n: self._resize()

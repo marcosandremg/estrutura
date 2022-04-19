@@ -131,3 +131,16 @@ class SLList(BaseList):
             i += 1
 
         return 'Reversed'
+
+    def particiona(self, x):
+        u = self.head
+        ultimo_maior = 0
+        while u is not None:
+            if u.x >= x:
+                u = u.next
+            else:
+                z = self.get(ultimo_maior)
+                self.set(ultimo_maior, u.x)
+                ultimo_maior += 1
+                u.x = z
+                u = u.next

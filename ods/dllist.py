@@ -32,7 +32,9 @@ class DLList(BaseList):
 
     def get(self, i):
         if i < 0 or i >= self.n: raise IndexError()
-        return self.get_node(i).x
+        x = self.get_node(i).x
+        self.move_para_frente(i)
+        return x
 
     def set(self, i, x): #@ReservedAssignment
         if i < 0 or i >= self.n: raise IndexError()
@@ -95,3 +97,18 @@ class DLList(BaseList):
             a = self.get(j)
             self.set(j, b)
             i += 1
+
+    def move_para_frente(self, i):
+        u = self.get_node(i)
+        t = u.prev
+        b = u.next
+        w = self.dummy.next
+        s = w.next
+        self.dummy.next = u
+        u.prev = self.dummy
+        u.next = s
+        s.prev = u
+        w.next = b
+        w.prev = t
+        t.next = w
+        b.prev = w
