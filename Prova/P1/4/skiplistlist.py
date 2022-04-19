@@ -5,6 +5,11 @@ W. Pugh. Skip Lists: A probabilistic alternative to balanced trees.
 
 W. Pugh. A skip list cookbook. CS-TR-2286.1, University of Maryland, 
   College Park, 1990.
+
+Declaro que a resolução desta atividade, que submeto para avaliação,é meu trabalho individual, realizado sem ajuda
+de qualquer outra pessoa, e constitui solução original criada por mim, sem auxílio de terceiros ou cópia de trabalhos
+já publicados.
+'''
 """
 import random
 import numpy

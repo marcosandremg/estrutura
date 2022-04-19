@@ -5,12 +5,11 @@ Stores the list in an array, a, so that the i'th list item is stored
 at a[(j+i)%len(a)].
 
 Uses a doubling strategy for resizing a when it becomes full or too empty.
-'''
-'''
+
+
 Declaro que a resolução desta atividade, que submeto para avaliação,é meu trabalho individual, realizado sem ajuda
 de qualquer outra pessoa, e constitui solução original criada por mim, sem auxílio de terceiros ou cópia de trabalhos
 já publicados.
-
 '''
 from ods.utils import new_array
 

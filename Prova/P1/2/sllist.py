@@ -1,4 +1,10 @@
-"""An implementation of a singly-linked list"""
+"""An implementation of a singly-linked list
+
+Declaro que a resolução desta atividade, que submeto para avaliação,é meu trabalho individual, realizado sem ajuda
+de qualquer outra pessoa, e constitui solução original criada por mim, sem auxílio de terceiros ou cópia de trabalhos
+já publicados.
+'''
+"""
 from ods.base import BaseList
 
 
