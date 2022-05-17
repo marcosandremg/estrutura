@@ -17,3 +17,4 @@ a.num_percuso()
 print(a.r.num_inordem)
 print(a.r.num_preordem)
 print(a.r.num_posordem)
+
