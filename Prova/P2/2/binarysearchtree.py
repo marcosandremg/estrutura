@@ -1,7 +1,14 @@
 """An implementation of a binary search tree"""
 from ods.binarytree import BinaryTree
 from ods.base import BaseSet
+"""
+Nome: Marcos André de Moraes Galdino
+Matricula: 201810068311
+Declaro que a resolução desta atividade, que submeto para avaliação, é meu trabalho individual,
+realizado sem ajuda de qualquer outra pessoa, e constitui solução original criada por mim,
+sem auxílio de terceiros ou cópia de trabalhos já publicados.
 
+"""
 
 class BinarySearchTree(BinaryTree, BaseSet):
     """Base classs for all our binary search trees"""
